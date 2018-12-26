@@ -1,0 +1,9 @@
+Major bugs:
+
+
+* On line 45 of original file, it copies more of the left VecTree again (often going beyond the end of the left vector), instead of the right one.
+
+Minor issues:
+
+* Allows duplicate entries in tree (not really a problem, but you might not find items where you expect)
+* test_tree.cc extremely slow to compile. Fixed by following recommendation here https://github.com/catchorg/Catch2/blob/master/docs/slow-compiles.md#top, to add a catch.cc file

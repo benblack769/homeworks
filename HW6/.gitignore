@@ -1,0 +1,12 @@
+server
+client_tests
+client
+*.o
+*.autosave
+*.exe
+*.csv*
+*.ods*
+*.data*
+*.out
+client_time
+client_test
