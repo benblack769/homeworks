@@ -38,7 +38,7 @@ To generate the data, I used g++ version 4.8, using the compile.sh script. It wa
 
 I chose buffer sizes of 2^13-2^28 with 4 points between each power of two to creates a relatively continuous plot on the log scale.
 
-![alt text](https://github.com/weepingwillowben/sysHW2/blob/master/clean.png "Clean graph")
+![alt text](https://github.com/benblack769/sysHW2/blob/master/clean.png "Clean graph")
 
 In the plot of the data, there is a fairly clear increase in latency at 2^15, a less clear increase between 2^18 and 2^19, and other huge increase right before 2^19. So given just this data, and before I did the analysis that will follow, I thought it very reasonable that the places where there were sudden jumps in latency were exactly where the cache sizes ran out, so I guessed 32kB, around 300kB, and 7mB. I think my reasoning makes sense intuitively because the moment data has to be fetched from the next cache level (since the cache ran out), there will be many misses, and a noticeable increase in latency should follow.
 
@@ -65,7 +65,7 @@ The graph is not monotonous or a step function, which should be expected because
 
 After I got the true cache sizes from cupid, I made another plot, using the above formula and guessed values for the true latencies until the plot of the above function matched the data fairly well.
 
-![alt text](https://github.com/weepingwillowben/sysHW2/blob/master/measured.png "fitted graph")
+![alt text](https://github.com/benblack769/sysHW2/blob/master/measured.png "fitted graph")
 
 I think it shows that the above model is a an OK model for truly random accesses on Intel's cache system. But there are some issues. At the junction between the caches, there is a substantial difference between the expected and the real. Two places are especially interesting:
 
@@ -82,7 +82,7 @@ So presumably the true latencies are close to these. The numbers are fairly clos
 
 Here is a plot of 12 latency tests conducted on 2^23 iterations:
 
-![alt text](https://github.com/weepingwillowben/sysHW2/blob/master/box.png "error graph")
+![alt text](https://github.com/benblack769/sysHW2/blob/master/box.png "error graph")
 
 This is interesting because the points that have the most error seem to be those between the L1 and the L2 cache. Note that I seeded my random generator to a constant, so my algorithm is deterministic. So all the error shown is messiness in the system, not my code. This also shows that the dip in latency that occurs after 2^21 bytes is reasonably consistent between tests, so it is either there is something interesting going on in the L3 cache that makes things faster, or my random algorithm is doing something weird with those sizes of bytes. Unfortunately, I have not had time to check that it is the former.
 

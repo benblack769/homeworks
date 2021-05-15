@@ -76,7 +76,7 @@ Plugging these numbers into an exponential fit function, and viola.
 
 This is the graph of 100,000,000 values randomly distributed over this distribution. It was created by running "unig.cpp".
 
-![alt text](https://github.com/weepingwillowben/HW6/blob/master/fit.png "random value graph")
+![alt text](https://github.com/benblack769/HW6/blob/master/fit.png "random value graph")
 
 Note that it does not look too dissimilar to the data in the memcache paper, despite my terrible method of fitting it.
 
@@ -104,13 +104,13 @@ TCP vs UDP and the number of threads are the only factors.
 
 #### UDP:
 
-![alt text](https://github.com/weepingwillowben/HW6/blob/master/udp_g.png "UDP throughput data")
+![alt text](https://github.com/benblack769/HW6/blob/master/udp_g.png "UDP throughput data")
 
 UDP flattens out very quickly, and clearly flattens out around 110000 requests per second.
 
 #### TCP:
 
-![alt text](https://github.com/weepingwillowben/HW6/blob/master/tcp_g.png "TCP throughput data")
+![alt text](https://github.com/benblack769/HW6/blob/master/tcp_g.png "TCP throughput data")
 
 TCP has a weird and inexplicable high point for two data points, at 8 and 9 threads, but ignoring that as weird, it flattens out at around 35500 requests per second.
 
