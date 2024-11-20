@@ -1,0 +1,10 @@
+set logscale x 2
+set logscale y
+set autoscale
+set xlabel "number of elements"
+set ylabel "time per update (us)"
+set title "Time vs size"
+#set xtic rotate by 45
+#set terminal png size 1000,700
+plot "graphdata0.col" using 1:2 with lines title "pure python","graphdata1.col" using 1:2 with lines title "ordinary c","graphdata2.col" using 1:2 with lines title "ordinary inline assembly","graphdata3.col" using 1:2 with lines title "vectorised assembly"#,"graphdata4.col" using 1:2 with lines title "python using numpy"
+pause 100
